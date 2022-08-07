@@ -20,7 +20,7 @@ export class Builder {
     this.watchFlag = option.watchFlag;
     this.devFlag = option.devFlag;
     this.buildFiles = [];
-    this.staticDirs = [];
+    this.staticFiles = [];
     this.staticDirs = [];
   }
 

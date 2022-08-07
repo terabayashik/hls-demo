@@ -1,6 +1,7 @@
 {
   "include": ["./src"],
   "compilerOptions": {
+    "jsx": "react",
     "target": "es6",
     "module": "commonjs",
     "strict": true,
