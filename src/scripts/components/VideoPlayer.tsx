@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import Hls from "hls.js";
 import React, { useEffect, useMemo, useRef } from "react";
 
-export function Video({ videoSrc }: { videoSrc: string }) {
+export function VideoPlayer({ videoSrc }: { videoSrc: string }) {
   const isSupported = useMemo(() => Hls.isSupported(), []);
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {

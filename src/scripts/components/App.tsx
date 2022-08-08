@@ -1,13 +1,7 @@
+import { Header } from "./Header";
 import { UrlForm } from "./UrlForm";
-import { Video } from "./Video";
-import {
-  Box,
-  Center,
-  ChakraProvider,
-  Heading,
-  HStack,
-  Image,
-} from "@chakra-ui/react";
+import { VideoPlayer } from "./VideoPlayer";
+import { Box, Center, ChakraProvider } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 export function App() {
@@ -21,12 +15,9 @@ export function App() {
     <ChakraProvider>
       <Center>
         <Box w="container.xl" p={4}>
-          <HStack>
-            <Image src="../assets/images/ME-F.png" maxH={8} />
-            <Heading>HLS Demo</Heading>
-          </HStack>
+          <Header />
           <UrlForm handleStreamUrlUpdate={handleStreamUrlUpdate} />
-          <Video videoSrc={videoSrc}></Video>
+          <VideoPlayer videoSrc={videoSrc}></VideoPlayer>
         </Box>
       </Center>
     </ChakraProvider>
