@@ -10,6 +10,7 @@ export function Video({ videoSrc }: { videoSrc: string }) {
       const hls = new Hls();
       hls.loadSource(videoSrc);
       hls.attachMedia(videoRef.current);
+      videoRef.current.play();
       return () => {
         hls.removeAllListeners();
         hls.stopLoad();
@@ -17,7 +18,10 @@ export function Video({ videoSrc }: { videoSrc: string }) {
     }
   }, [videoSrc]);
   return (
-    <Box className="content">
+    <Box
+      className="content"
+      visibility={videoSrc === "" ? "hidden" : "visible"}
+    >
       {isSupported ? (
         <Box className="video-container">
           <video ref={videoRef} className="video" controls></video>
