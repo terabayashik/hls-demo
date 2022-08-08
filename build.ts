@@ -6,6 +6,6 @@ const devFlag = process.argv.includes("--dev");
 const builder = new Builder({ watchFlag, devFlag });
 builder.addBuildFile(["src/scripts/index.tsx"]);
 builder.addStaticFile(["src/pages/index.html"]);
-builder.addStaticDir([]);
+builder.addStaticDir(["src/assets/images"]);
 
 builder.build();
