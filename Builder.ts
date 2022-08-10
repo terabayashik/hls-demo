@@ -3,7 +3,7 @@ import { build, BuildOptions } from "esbuild";
 import { promises as fs } from "fs";
 import path from "path";
 
-const distDir = "doc";
+const distDir = "docs";
 
 const distPath = (relPath: string) => {
   return path.join(distDir, relPath.replace("src", ""));
