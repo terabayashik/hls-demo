@@ -6,7 +6,7 @@ import path from "path";
 const distDir = "doc";
 
 const distPath = (relPath: string) => {
-  return path.join(distDir, relPath);
+  return path.join(distDir, relPath.replace("src", ""));
 };
 
 export class Builder {
