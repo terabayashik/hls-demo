@@ -52,6 +52,12 @@ const addBufferAppendedHandler = (
   });
 };
 
+const addBufferFlushingHandler = (hls: Hls) => {
+  hls.on(Hls.Events.BUFFER_FLUSHING, (_, data) => {
+    console.log("flushing", data.startOffset, data.endOffset);
+  });
+};
+
 const addBufferFlushedHandler = (hls: Hls) => {
   hls.on(Hls.Events.BUFFER_FLUSHED, (_, data) => {
     if (data.type === "video") {
@@ -92,6 +98,7 @@ export function VideoPlayer({
       const hls = new Hls(hlsConfig);
       addErrorHandler(hls, handleData);
       addBufferAppendedHandler(hls, handleData);
+      addBufferFlushingHandler(hls);
       addBufferFlushedHandler(hls);
       addMediaAttachedHandler(hls);
       addMediaDetachedHandler(hls);
